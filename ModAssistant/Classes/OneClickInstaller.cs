@@ -52,7 +52,10 @@ namespace ModAssistant
 
         private static async Task BeatSaver(Uri uri)
         {
-            string[] keys = uri.AbsolutePath.TrimStart('/').Split('.');
+            string uriString = uri.ToString();
+            string keysPart = uriString.Substring("beatsaver://".Length);
+            string[] keys = keysPart.Split('.');
+
             foreach (string singleKey in keys) {
                 await API.BeatSaver.GetFromKey(singleKey);
             }
