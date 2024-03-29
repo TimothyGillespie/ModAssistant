@@ -52,9 +52,9 @@ namespace ModAssistant
 
         private static async Task BeatSaver(Uri uri)
         {
-            string[] Keys = uri.Host.Split(",");
-            foreach(String SingleKey in Keys) {
-                await API.BeatSaver.GetFromKey(SingleKey);
+            string[] keys = uri.Host.Split(',');
+            foreach (string singleKey in keys) {
+                await API.BeatSaver.GetFromKey(singleKey);
             }
         }
 
