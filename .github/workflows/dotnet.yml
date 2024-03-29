@@ -37,7 +37,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
         name: Mod Assistant v${{ steps.get_version.outputs.version }}
         files: ./ModAssistant/bin/Release/ModAssistant.exe
